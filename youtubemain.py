@@ -242,7 +242,7 @@ def dataclean(query):
     return(channel, play,video, comment)
 
 
-#code for Direct insert 
+# Direct dataframe insertion into MySQL
 
 # from sqlalchemy import create_engine
 # engine = create_engine("mysql+mysqlconnector://root:Prakashk14@localhost/youtube")
@@ -505,8 +505,7 @@ elif inp == 'MYSQL Query Results':
         df7 = pd.DataFrame(data, columns = [i[0] for i in mycursor.description])
         df7['TotalViews'] = df7['TotalViews'].astype(int)
         st.dataframe(df7)
-
-        # st.bar_chart(df7,x='ChannelName' , y='TotalViews') 
+        st.bar_chart(df7,x='ChannelName' , y='TotalViews') 
     elif question == '8. What are the names of all the channels that have published videos in the year 2022?':
         st.write(question)
         mycursor.execute(""" SELECT DISTINCT channeldetails.ChannelName FROM channeldetails INNER JOIN playlistiddetails ON channeldetails.PlayListId = playlistiddetails.PlayListId
