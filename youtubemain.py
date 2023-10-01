@@ -31,16 +31,24 @@ api_key = os.getenv("API_KEY")
 youtube = build(api_service_name, api_version, developerKey=api_key)
 
 # MongoDB Connection
-cloud_client = mc("mongodb+srv://prakashkoffi:1234567890@cluster0.2owrgpr.mongodb.net/?retryWrites=true&w=majority")
-# loc = mc('mongodb://localhost:27017')
-database = cloud_client['YouTube']
-collection = database['YouTube']
+mongodb_host_name = os.getenv("MONGODB_HOST_NAME")
+mongodb_password = os.getenv("MONGODB_PASSWORD")
+mongodb_database_name = os.getenv("MONGODB_DATABASE")
+mongodb_collection_name = os.getenv("MONGODB_COLLECTION")
+cloud_client = mc(f"mongodb+srv://{mongodb_host_name}:{mongodb_password}@cluster0.2owrgpr.mongodb.net/?retryWrites=true&w=majority")
+database = cloud_client[mongodb_database_name]
+collection = database[mongodb_collection_name]
 
 # MYSQL Connection
-db = mysql.connector.connect(host = 'localhost',
-                           user = 'root',
-                           password = 'Prakashk14',
-                           database = 'youtube')
+mysql_host_name = os.getenv("MYSQL_HOST_NAME")
+mysql_user_name = os.getenv("MYSQL_USER_NAME")
+mysql_password = os.getenv("MYSQL_PASSWORD")
+mysql_database_name = os.getenv("MYSQL_DATABASE_NAME")
+
+db = mysql.connector.connect(host = mysql_host_name,
+                             user = mysql_user_name,
+                             password = mysql_password,
+                             database = mysql_database_name)
 mycursor = db.cursor(buffered = True)
 
 # The get_channelId function retrieves the channelId associated with a given channel name.
