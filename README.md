@@ -92,6 +92,6 @@ Conclude by constructing a user-friendly dashboard with Streamlit. Provide dropd
 - Once it's up and running, follow the on-screen instructions to dive into the world of YouTube data.
 
 
-## Demo Video
-[https://www.linkedin.com/posts/prakash-k-physics_youtubedata-dataharvesting-datawarehousing-activity-7114551029693652992-zw-s?utm_source=share&utm_medium=member_desktop]
-
+## Demo Video Link
+To view a demo of the web application, click the link below.
+https://www.linkedin.com/posts/prakash-k-physics_youtubedata-dataharvesting-datawarehousing-activity-7114551029693652992-zw-s?utm_source=share&utm_medium=member_desktop
